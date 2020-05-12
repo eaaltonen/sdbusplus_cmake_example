@@ -54,11 +54,6 @@ int main()
     // Define a dbus path location to place the object.
     constexpr auto path = "/net/poettering/calculator";
 
-    static_assert(
-        std::string_view(
-            sdbusplus::net::poettering::client::Calculator::interface) ==
-        std::string_view(Calculator::interface));
-
     // Create a new bus and affix an object manager for the subtree path we
     // intend to place objects at..
     auto b = sdbusplus::bus::new_default();
